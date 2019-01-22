@@ -26,7 +26,7 @@ namespace Architecture.EF.Data
 
         public T Get(int id)
         {
-            return _dbContext.Set<T>().Find(id);
+            return _dbContext.Set<T>().AsNoTracking().First(x => x.ID == id);
         }
 
         public IEnumerable<T> List()

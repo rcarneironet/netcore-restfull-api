@@ -20,7 +20,7 @@ namespace Architecture.Demo.Core.Services
         }
 
         public Customer Get(int id)
-        {
+        {            
             return _customerRepository.Get(id);
         }
 
@@ -32,6 +32,8 @@ namespace Architecture.Demo.Core.Services
         public Customer Update(int id, CustomerDTO dto)
         {
             var customer = new Customer(dto.Name, dto.IsActive);
+            customer.ID = id;
+
             _customerRepository.Update(customer);
             return Get(id);
         }

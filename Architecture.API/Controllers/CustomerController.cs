@@ -43,6 +43,7 @@ namespace Architecture.API.Controllers
         }
 
         [HttpPut]
+        [Route("{id}")]
         [ProducesResponseType(typeof(Customer), 202)]
         [ProducesResponseType(404)] //not found
         [ProducesResponseType(409)] //conflict
